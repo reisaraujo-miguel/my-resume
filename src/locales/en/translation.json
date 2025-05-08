@@ -1,0 +1,158 @@
+{
+  "name": "MIGUEL REIS DE ARAÚJO",
+  "contact": {
+    "title": "CONTACT",
+    "phone": "+55 (24) 99279-6906",
+    "email": "reisaraujo.miguel@gmail.com",
+    "github": "github.com/reisaraujo-miguel",
+    "linkedin": "linkedin.com/in/reisaraujo-miguel/"
+  },
+  "education": {
+    "title": "EDUCATION",
+    "items": [
+      {
+        "degree": "Bachelor's Degree in Computer Science",
+        "institution": "University of São Paulo",
+        "dates": "2021 - Present"
+      },
+      {
+        "degree": "Professional High School in Business Administration",
+        "institution": "Ciep 999",
+        "dates": "2018 - 2020"
+      }
+    ]
+  },
+  "skills": {
+    "title": "SKILLS",
+    "items": [
+      {
+        "name": "Python",
+        "icon": "fab fa-python"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "fab fa-js"
+      },
+      {
+        "name": "Java",
+        "icon": "fab fa-java"
+      },
+      {
+        "name": "Golang",
+        "icon": "fab fa-golang"
+      },
+      {
+        "name": "C/C++",
+        "icon": "devicon-cplusplus-plain"
+      },
+      {
+        "name": "HTML/CSS",
+        "icon": "fab fa-html5"
+      },
+      {
+        "name": "PHP",
+        "icon": "fab fa-php"
+      },
+      {
+        "name": "Git",
+        "icon": "fab fa-git-alt"
+      },
+      {
+        "name": "React",
+        "icon": "fab fa-react"
+      },
+      {
+        "name": "Docker",
+        "icon": "fab fa-docker"
+      },
+      {
+        "name": "Bash",
+        "icon": "devicon-bash-plain"
+      },
+      {
+        "name": "Ansible",
+        "icon": "devicon-ansible-plain"
+      },
+      {
+        "name": "SSH",
+        "icon": "devicon-ssh-original-wordmark"
+      },
+      {
+        "name": "Agile Methodologies",
+        "icon": "fas fa-tasks"
+      }
+    ]
+  },
+  "interests": {
+    "title": "INTERESTS",
+    "items": [
+      {
+        "category": "Game Development",
+        "details": "Active member of Fellowship of the Game (FoG), an academic extension group focused on research and development of digital games."
+      },
+      {
+        "category": "Formal Languages",
+        "details": "Strong interest in formal languages and automata theory, continuously seeking to deepen knowledge."
+      },
+      {
+        "category": "Web Development",
+        "details": "Interest in web application development, staying updated on frameworks, libraries, and innovations."
+      },
+      {
+        "category": "Computer Vision",
+        "details": "Deep interest in the field of computer vision and its transformative impact on society."
+      }
+    ]
+  },
+  "professional-experience": {
+    "title": "PROFESSIONAL EXPERIENCE",
+    "items": [
+      {
+        "role": "Fellow at Runcodes Platform",
+        "org": "ICMC-USP",
+        "dates": "2024 - Present",
+        "details": [
+          "Providing technical support, solving user problems on the run.codes programming exercise platform.",
+          "Implementing support for new programming languages according to student and faculty demands.",
+          "Contributing to system maintenance and updates.",
+          "Using technologies such as Ansible, Docker, SSH, Python, Bash, and PHP, gaining experience in Linux server administration."
+        ]
+      },
+      {
+        "role": "General Office Assistant",
+        "org": "Casas Bahia",
+        "dates": "2021 - 2022",
+        "details": [
+          "Managing physical and digital document archiving.",
+          "Assisting with administrative routines, including document organization, photocopying, and sending correspondence.",
+          "Coordinating the requisition and replenishment of office supplies based on company needs.",
+          "Preparing and digitizing documents, reports, and spreadsheets."
+        ]
+      }
+    ]
+  },
+  "volunteering-experience": {
+    "title": "VOLUNTEERING",
+    "items": [
+      {
+        "role": "USP Career Fair",
+        "org": "USP",
+        "dates": "2023",
+        "details": [
+          "Acted as a monitor representing the Computer Science course (ICMC-USP) at the annual event for prospective students.",
+          "Provided information about academic life and course details to high school and pre-university students."
+        ]
+      },
+      {
+        "role": "Student Housing Selection Committee",
+        "org": "USP",
+        "dates": "2022 - Present",
+        "details": [
+          "Participates in the socioeconomic selection process for student housing vacancies.",
+          "Involved in establishing and disseminating registration dates, procedures, and evaluation criteria.",
+          "Assists in conducting interviews and disseminating selection results."
+        ]
+      }
+    ]
+  }
+}
