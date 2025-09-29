@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "./components/LanguageToggle";
 import ContactInfo from "./components/ContactInfo";
@@ -6,6 +5,7 @@ import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Interests from "./components/Interests";
+import DownloadPDF from "./components/DownloadPDF";
 import "./App.css";
 
 function App() {
@@ -14,9 +14,10 @@ function App() {
   return (
     <div>
       <LanguageToggle />
-      <div className="container">
+      <DownloadPDF />
+      <main className="container">
         <div className="content">
-          <h1>{t("name")}</h1>
+          <header>{t("name")}</header>
           <ContactInfo />
           <Education />
           <Skills />
@@ -24,7 +25,7 @@ function App() {
           <Experience expType="professional-experience" />
           <Experience expType="volunteering-experience" />
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -1,10 +1,8 @@
-import React from "react";
-
 const Section = ({ title, children }) => (
-	<div className="section">
-		<h2>{title}</h2>
+	<section>
+		<h1>{title}</h1>
 		{children}
-	</div>
+	</section>
 );
 
 export default Section;

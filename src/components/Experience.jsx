@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import Section from "./Section";
 
@@ -7,21 +6,27 @@ const Experience = ({ expType }) => {
 
 	return (
 		<Section title={t(`${expType}.title`)}>
-			<div>
-				{t(`${expType}.items`, { returnObjects: true }).map((exp, index) => (
-					<div className="experience-item" key={index}>
-						<h3>{exp.role}</h3>
-						<p>
-							{exp.org} | {exp.dates}
-						</p>
-						<ul>
-							{exp.details.map((responsibility, index) => (
-								<li key={index}>{responsibility}</li>
-							))}
-						</ul>
-					</div>
-				))}
-			</div>
+			<span className="top-level-list">
+				<ul>
+					{t(`${expType}.items`, { returnObjects: true }).map((exp, index) => (
+						<li key={index}>
+							<div className="experience-item">
+								<h2>{exp.role}</h2>
+								<p>
+									{exp.org} | {exp.dates}
+								</p>
+								<span className="experience-list">
+									<ul>
+										{exp.details.map((responsibility, index) => (
+											<li key={index}>{responsibility}</li>
+										))}
+									</ul>
+								</span>
+							</div>
+						</li>
+					))}
+				</ul>
+			</span>
 		</Section>
 	);
 };

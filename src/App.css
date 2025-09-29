@@ -99,7 +99,7 @@ body {
   }
 }
 
-h1 {
+.content header {
   font-size: 1.8rem;
   font-weight: 700;
   text-align: left;
@@ -110,7 +110,7 @@ h1 {
   position: relative;
 }
 
-h1::before {
+.content header::before {
   content: ">> ";
   color: var(--ctp-green);
   font-weight: normal;
@@ -120,7 +120,7 @@ h1::before {
   top: 0;
 }
 
-h2 {
+h1 {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0rem 0 1rem 0;
@@ -129,7 +129,7 @@ h2 {
   padding-left: 1.4rem;
 }
 
-h2::before {
+h1::before {
   content: "# ";
   color: var(--ctp-mauve);
   font-weight: normal;
@@ -139,14 +139,14 @@ h2::before {
   top: 0;
 }
 
-h3 {
+h2 {
   font-size: 1rem;
   font-weight: 600;
   margin: 0.5rem 0;
   color: var(--ctp-sky);
 }
 
-.section {
+section {
   margin-top: 1.4rem;
   padding: 1rem;
   background-color: var(--ctp-surface0);
@@ -157,32 +157,53 @@ h3 {
 }
 
 /* Keep section header with at least 2 lines of content */
-.section h2 {
+section h2 {
   page-break-after: avoid;
 }
+
+
 
 .contact-info a {
   color: var(--ctp-blue);
   text-decoration: none;
 }
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.8rem;
-  color: var(--ctp-subtext1);
-  font-size: 1rem;
+.top-level-list ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0;
 }
 
-.contact-item i {
+.top-level-list li {
+  display: flex;
+  align-items: center;
+  color: var(--ctp-subtext1);
+  font-size: 1rem;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.top-level-list li:before {
+  content: none;
+}
+
+.contact-info li {
+  margin-bottom: 1rem;
+}
+
+.contact-info figure {
   margin-right: 1.2rem;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   font-size: 1.8rem;
   color: var(--ctp-blue);
   width: 1.8rem;
   text-align: center;
 }
 
-ul {
+.experience-list ul {
   list-style: none;
   margin-left: 0;
   padding-left: 2rem;
@@ -194,13 +215,13 @@ ul {
   margin-bottom: 0.5rem;
 }
 
-li {
+.experience-list li {
   margin-bottom: 0.6rem;
   position: relative;
   padding-left: 2rem;
 }
 
-li::before {
+.experience-list li::before {
   content: "•";
   position: absolute;
   left: 0;
@@ -221,16 +242,17 @@ li::before {
 .experience-item:last-child,
 .education-item:last-child,
 .volunteering-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .experience-item p,
 .education-item p,
-.volunteering-item p {
+.volunteering-item p{
   margin: 0.3rem 0;
   color: var(--ctp-subtext0);
   font-size: 0.95rem;
 }
+
 
 .skills-list {
   display: flex;
@@ -242,13 +264,13 @@ li::before {
   border-left: none;
 }
 
-.skills-list li {
+.skills-list li p {
   background-color: var(--ctp-surface1);
   padding: 0.6rem 0.6rem;
   border-radius: 0.6rem;
   font-size: 0.9rem;
   color: var(--ctp-rosewater);
-  margin-bottom: 0.1rem;
+  margin: 0rem;
   border: 0.1rem solid var(--ctp-surface2);
   display: flex;
   align-items: center;
@@ -258,8 +280,9 @@ li::before {
   content: none;
 }
 
-.skills-list li i {
-  margin-right: 0.4rem;
+.skills-list figure {
+  margin: 0.4rem;
+  padding: 0;
   font-size: 1rem;
   color: var(--ctp-blue);
   min-width: 1.6rem;
