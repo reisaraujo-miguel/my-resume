@@ -7,129 +7,149 @@ const DownloadPDF = () => {
     // Add professional ATS-friendly print styles
     const printStyle = document.createElement('style');
     printStyle.innerHTML = `
-      @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
       @media print {
-        /* Reset everything for professional resume */
+        /* ATS-Friendly Reset */
         * {
           margin: 0 !important;
           padding: 0 !important;
           box-sizing: border-box !important;
         }
 
+        /* Professional ATS-Friendly Body */
         body {
           background: white !important;
           color: #000000 !important;
-          font-family: "Atkinson Hyperlegible", sans-serif !important;
+          font-family: "Arial", "Helvetica", sans-serif !important;
           font-size: 11pt !important;
-          line-height: 1.15 !important;
+          line-height: 1.2 !important;
           margin: 0 !important;
           padding: 0 !important;
         }
 
+        /* Container - A4 Paper Size */
         .container {
           width: 100% !important;
-          max-width: 8.5in !important;
-          margin: 0 auto !important;
-          padding: 0.5in !important;
+          max-width: 21cm !important;
+          margin: 0 !important;
+          padding: 0 !important;
           background: white !important;
           box-shadow: none !important;
         }
 
+        /* Content Area */
         .content {
           width: 100% !important;
           margin: 0 !important;
           padding: 0 !important;
         }
 
-        /* Professional header */
-        h1 {
-          font-size: 24pt !important;
+        /* Professional Header - ATS Friendly */
+        .content header {
+          font-size: 20pt !important;
           font-weight: bold !important;
-          text-align: center !important;
+          text-align: left !important;
           color: #000000 !important;
-          margin-bottom: 0.2in !important;
+          margin-bottom: 0.3in !important;
           border-bottom: 2pt solid #000000 !important;
-          padding-bottom: 0.1in !important;
+          padding: 0 0 0.1in 0 !important;
+        }
+
+        .content header::before {
+          content: none !important;
+        }
+
+        /* Section Headers - Clean and Professional */
+        h1 {
+          font-size: 14pt !important;
+          font-weight: bold !important;
+          color: #000000 !important;
+          margin: 0.2in 0 0.1in 0 !important;
+          border-bottom: 1pt solid #333333 !important;
+          padding-bottom: 0.05in !important;
+          text-transform: uppercase !important;
         }
 
         h1::before {
           content: none !important;
         }
 
-        /* Section headers */
+        /* Job Titles and Education */
         h2 {
-          font-size: 14pt !important;
-          font-weight: bold !important;
-          color: #000000 !important;
-          margin: 0.2in 0 0.1in 0 !important;
-          border-bottom: 1pt solid #000000 !important;
-          padding-bottom: 0.05in !important;
-          text-transform: uppercase !important;
-        }
-
-        h2::before {
-          content: none !important;
-        }
-
-        /* Job titles and education */
-        h3 {
           font-size: 12pt !important;
           font-weight: bold !important;
           color: #000000 !important;
           margin: 0.1in 0 0.05in 0 !important;
         }
 
-        /* Professional sections */
-        .section {
+        /* Professional Sections - Clean and Minimal */
+        section {
           background: white !important;
           border: none !important;
           border-radius: 0 !important;
-          margin: 0 !important;
+          margin: 0.15in 0 !important;
           padding: 0 !important;
           page-break-inside: avoid !important;
         }
 
-        /* Contact info */
+        /* Contact Info - Professional Formatting */
         .contact-info {
           margin-bottom: 0.2in !important;
         }
 
-        .contact-item {
+        .contact-info ul {
+          list-style: none !important;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          border-left: none !important;
+        }
+
+        .contact-info li {
           display: inline-block !important;
-          margin: 0 0.1in !important;
+          margin: 0 0.15in 0.05in 0 !important;
           color: #000000 !important;
           font-size: 10pt !important;
         }
 
-        .contact-item i {
+        .contact-info figure {
           display: none !important;
         }
 
-        /* Lists for professional formatting */
-        ul {
+        .contact-info a {
+          color: #000000 !important;
+          text-decoration: none !important;
+        }
+
+        /* Experience Lists - Professional Bullet Points */
+        .experience-list ul,
+        .education-list ul,
+        .volunteering-list ul {
           list-style: disc !important;
-          margin-left: 0.3in !important;
+          margin-left: 0.4in !important;
           padding-left: 0 !important;
           border-left: none !important;
           color: #000000 !important;
         }
 
-        li {
+        .experience-list li,
+        .education-list li,
+        .volunteering-list li {
           margin-bottom: 0.05in !important;
           padding-left: 0 !important;
           font-size: 10pt !important;
           line-height: 1.2 !important;
         }
 
-        li::before {
+        .experience-list li::before,
+        .education-list li::before,
+        .volunteering-list li::before {
           content: none !important;
         }
 
-        /* Experience and education items */
+        /* Experience and Education Items */
         .experience-item,
         .education-item,
         .volunteering-item {
-          margin-bottom: 0.1in !important;
+          margin-bottom: 0.15in !important;
           page-break-inside: avoid !important;
         }
 
@@ -141,11 +161,11 @@ const DownloadPDF = () => {
           font-size: 10pt !important;
         }
 
-        /* Skills - horizontal list */
+        /* Skills - Clean Horizontal List */
         .skills-list {
           display: block !important;
           list-style: none !important;
-          margin: 0.05in 0 !important;
+          margin: 0.1in 0 !important;
           padding: 0 !important;
         }
 
@@ -154,24 +174,27 @@ const DownloadPDF = () => {
           background: none !important;
           border: none !important;
           padding: 0 !important;
-          margin: 0 0.05in 0.05in 0 !important;
+          margin: 0 0.08in 0.05in 0 !important;
           font-size: 10pt !important;
         }
 
-        .skills-list li::after {
-          content: " • " !important;
+        .skills-list li p {
+          background: none !important;
+          border: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
           color: #000000 !important;
         }
 
-        .skills-list li:last-child::after {
+       .skills-list li:last-child::after {
           content: "" !important;
         }
 
-        .skills-list li i {
+        .skills-list figure {
           display: none !important;
         }
 
-        /* Interests */
+        /* Interests - Clean Formatting */
         .interests-list {
           list-style: none !important;
           margin-left: 0 !important;
@@ -182,6 +205,8 @@ const DownloadPDF = () => {
         .interests-list li {
           padding-left: 0 !important;
           margin-bottom: 0.05in !important;
+          color: #000000 !important;
+          font-size: 10pt !important;
         }
 
         .interests-list li::before {
@@ -190,28 +215,49 @@ const DownloadPDF = () => {
 
         .interests-list li strong {
           color: #000000 !important;
+          font-weight: bold !important;
         }
 
-        /* Hide UI elements */
+        /* Hide UI Elements */
+        #buttons,
+        .button,
         .download-btn,
-        .language-toggle,
-        #language-toggle {
+        .language-toggle {
           display: none !important;
         }
 
-        /* Page breaks and formatting */
+        /* Professional Page Settings */
         @page {
-          size: letter;
-          margin: 0.5in;
+          size: A4;
+          margin: 1.5cm;
         }
 
-        /* Ensure good page breaks */
+        /* Page Break Control */
         h2, h3 {
           page-break-after: avoid !important;
         }
 
-        .section {
+        section {
           page-break-inside: avoid !important;
+        }
+
+        /* Ensure good spacing and readability */
+        .top-level-list ul {
+          list-style: none !important;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+          border-left: none !important;
+        }
+
+        .top-level-list li {
+          display: inline-block !important;
+          color: #000000 !important;
+          font-size: 10pt !important;
+          margin: 0 0.15in 0.05in 0 !important;
+        }
+
+        .top-level-list li:before {
+          content: none !important;
         }
       }
     `;
@@ -233,25 +279,10 @@ const DownloadPDF = () => {
 
   return (
     <button
-      className="download-btn"
+      className="button"
       onClick={handlePrint}
-      style={{
-        position: "fixed",
-        top: "20px",
-        right: "20px",
-        backgroundColor: "#007bff",
-        color: "white",
-        border: "none",
-        padding: "10px 20px",
-        borderRadius: "5px",
-        cursor: "pointer",
-        fontSize: "14px",
-        fontWeight: "bold",
-        zIndex: 1000,
-        boxShadow: "0 2px 5px rgba(0,0,0,0.2)"
-      }}
     >
-      📄 {t("downloadPDF")}
+      {t("downloadPDF")}
     </button>
   );
 };

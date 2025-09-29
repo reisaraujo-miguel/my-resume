@@ -15,7 +15,7 @@ const LanguageToggle = () => {
 	const getButtonClass = (lng) => (i18n.language === lng ? "active" : "");
 
 	return (
-		<div id="language-toggle">
+		<div className="button">
 			<button
 				onClick={() => changeLanguage("pt")}
 				className={getButtonClass("pt")}

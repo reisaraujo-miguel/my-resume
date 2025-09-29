@@ -1,9 +1,3 @@
-/* A4 Paper Size Optimization */
-@page {
-  size: A4;
-  margin: 0cm;
-}
-
 /* Catppuccin Mocha Palette */
 :root {
   background-color: var(--ctp-base);
@@ -36,7 +30,13 @@
 
 /* Print-specific adjustments */
 @media print {
-  .section {
+  /* A4 Paper Size Optimization */
+  @page {
+    size: A4;
+    margin: 0cm;
+  }
+
+  section {
     break-inside: avoid;
     orphans: 3;
     /* Minimum lines at the bottom of a page */
@@ -56,7 +56,7 @@
   }
 
   /* Hide the language toggle when printing */
-  #language-toggle {
+  #buttons {
     display: none !important;
   }
 }
@@ -93,9 +93,9 @@ body {
   padding: 2rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 470px) {
   .content {
-    padding-top: 3.5rem;
+    padding-top: 9rem;
   }
 }
 
@@ -163,11 +163,6 @@ section h2 {
 
 
 
-.contact-info a {
-  color: var(--ctp-blue);
-  text-decoration: none;
-}
-
 .top-level-list ul {
   list-style: none;
   margin-left: 0;
@@ -186,6 +181,11 @@ section h2 {
 
 .top-level-list li:before {
   content: none;
+}
+
+.contact-info a {
+  color: var(--ctp-blue);
+  text-decoration: none;
 }
 
 .contact-info li {
@@ -317,65 +317,44 @@ section h2 {
   font-size: 1.1rem;
 }
 
-/* --- Language Toggle Styles --- */
-#language-toggle {
+/* --- Language Toggle and Download Styles --- */
+#buttons {
   position: fixed;
-  /* Keep it in the viewport */
   top: 0.8rem;
-  /* Distance from the top */
   right: 0.8rem;
-  /* Distance from the right */
   z-index: 1000;
-  /* Ensure it's above other content */
+}
+
+.button {
+  margin-bottom: 1.5rem;
   background-color: var(--ctp-surface0);
-  /* Background color from your palette */
   border: 0.1rem solid var(--ctp-surface1);
-  /* Border color from your palette */
   border-radius: 0.8rem;
-  /* Rounded corners */
   padding: 0.5rem 0.5rem;
-  /* Padding inside the toggle container */
   display: flex;
-  /* Arrange buttons side by side */
   gap: 0.8rem;
-  /* Space between buttons */
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  /* Subtle shadow */
 }
 
-#language-toggle button {
+.button button {
   background-color: var(--ctp-base);
-  /* Button background */
   color: var(--ctp-text);
-  /* Button text color */
   border: 0.1rem solid var(--ctp-surface2);
-  /* Button border */
   border-radius: 0.5rem;
-  /* Button rounded corners */
   padding: 0.5rem 0.8rem;
-  /* Button padding */
   cursor: pointer;
-  /* Indicate it's clickable */
   font-family: "Fira Code", monospace;
-  /* Your preferred font */
   font-size: 0.9rem;
-  /* Font size */
   transition: background-color 0.3s ease;
-  /* Smooth hover effect */
 }
 
-#language-toggle button:hover {
+.button button:hover {
   background-color: var(--ctp-surface1);
-  /* Hover background */
 }
 
-#language-toggle button.active {
+.button button.active {
   background-color: var(--ctp-blue);
-  /* Active button background */
   color: var(--ctp-base);
-  /* Active button text color */
   border-color: var(--ctp-blue);
-  /* Active button border */
   font-weight: 600;
-  /* Make active button text bolder */
 }

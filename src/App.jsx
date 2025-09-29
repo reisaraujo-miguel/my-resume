@@ -13,8 +13,10 @@ function App() {
 
   return (
     <div>
-      <LanguageToggle />
-      <DownloadPDF />
+      <nav id="buttons">
+        <LanguageToggle />
+        <DownloadPDF />
+      </nav>
       <main className="container">
         <div className="content">
           <header>{t("name")}</header>
@@ -26,7 +28,7 @@ function App() {
           <Experience expType="volunteering-experience" />
         </div>
       </main>
-    </div>
+    </div >
   );
 }
 
